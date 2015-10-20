@@ -8,6 +8,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'kaminari'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
