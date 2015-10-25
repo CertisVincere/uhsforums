@@ -1,1 +1,4 @@
 <%= @user.name %>, <%= @user.email %>
+<% if @user.admin == true %>
+  <%= link_to "Create a user", new_user_path %>
+<% end %>
