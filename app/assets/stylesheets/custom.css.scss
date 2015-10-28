@@ -1,0 +1,84 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* fonts */
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Signika);
+@font-face {
+  font-family: "Stellar";
+  src:url('Stellar-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$signika: "Signika", sans-serif;
+$lato: "Lato", sans-serif;
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+
+/* mixins, variables, etc. */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* forms */
+
+h1 {
+  text-align: center;
+  font-family: 'Stellar';
+  font-weight: 100;
+  letter-spacing: 4px;
+}
+
+.create-button {
+  font-family: $lato, helvetica, arial, sans;
+  font-size: 1.3em;
+}
+
+.create-button:hover {
+  color: #08c;
+  background: #e7e7e7;
+  text-shadow: 0 1px 0px rgba(255, 255, 255, .25);
+  border: 1px solid #08c;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  text-decoration:none;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important
+}
