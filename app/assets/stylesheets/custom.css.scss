@@ -53,6 +53,7 @@ h1 {
   font-family: 'Stellar';
   font-weight: 100;
   letter-spacing: 4px;
+  color: white;
 }
 
 .create-button {
@@ -81,4 +82,8 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important
+}
+
+.row {
+  color: white;
 }
