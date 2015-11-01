@@ -3,16 +3,16 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for (@user) do |f| %>
-      <%= f.label :name %>
+      <%= f.label :name, class: 'label' %>
       <%= f.text_field :name %>
 
-      <%= f.label :email %>
+      <%= f.label :email, class: 'label' %>
       <%= f.email_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :password, class: 'label' %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.label :password_confirmation, "Confirm Password", class: 'label' %>
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "CREATE", class: "btn btn-primary create-button" %>
