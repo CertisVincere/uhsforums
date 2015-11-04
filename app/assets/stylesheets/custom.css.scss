@@ -5,6 +5,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import url(https://fonts.googleapis.com/css?family=Signika);
+@import 'compass';
 @font-face {
   font-family: "Stellar";
   src:font-url('Stellar/Stellar-Regular.otf');
@@ -56,12 +57,12 @@ h1 {
   color: white;
 }
 
-.create-button {
-  font-family: $lato, helvetica, arial, sans;
+.create-button, .login-button {
+  font-family: 'Stellar';
   font-size: 1.3em;
 }
 
-.create-button:hover {
+.create-button:hover, .login-button:hover {
   color: #08c;
   background: #e7e7e7;
   text-shadow: 0 1px 0px rgba(255, 255, 255, .25);
@@ -86,6 +87,7 @@ input {
 
 .label {
   color: white;
+  font-family: 'Stellar';
   font-size: 14px;
 }
 
@@ -102,5 +104,71 @@ input {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
+  }
+}
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+$fontcolor: #EEE;
+
+html {
+  background-color: #82b2ed;
+}
+
+.navbar {
+  .nav {
+    list-style-type: none;
+    height: 50px;
+    background: #6c9ddd;
+    -moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+    .nav-item {
+      display: block;
+      float: left;
+      position: relative;
+      background-color: #5c79bc; // Old browsers
+      @include filter-gradient(#5c79bc, #6c9ddd, vertical); // IE6-9
+      @include background-image(linear-gradient(top,  #5c79bc 10%,#6c9ddd 10%));
+      background-position: 0 -5px;
+      background-size: 100% 110%;
+      transition: all 0.3s;
+      &:hover {
+        background-position: 0 0;
+      }
+      &:before {
+        content: '';
+        opacity: 0;
+        display: block;
+        background-color: #5c79bc;
+        width: 5px;
+        height: 8px;
+        position: absolute;
+        left: 50%;
+        top: -20%;
+        margin-left: -5px;
+        @include transform(rotate(45deg));
+        transition: all 0.3s;
+      }
+      &:hover:before {
+        top: 0;
+        opacity: 1;
+      }
+      a {
+        display: block;
+        padding: 15px 30px;
+        text-decoration: none;
+        color: $fontcolor;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: 'Roboto', sans-serif;
+      }
+      a:hover {
+        color: darken($fontcolor, 9%);
+      }
+    }
   }
 }
