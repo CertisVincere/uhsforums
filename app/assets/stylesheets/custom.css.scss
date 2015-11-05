@@ -112,27 +112,24 @@ input {
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
-$fontcolor: #EEE;
-
-html {
-  background-color: #82b2ed;
-}
-
 .navbar {
   .nav {
     list-style-type: none;
     height: 50px;
-    background: #6c9ddd;
+    background: white;
     -moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
     -webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
     box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+    #login, #logout {
+      float: right
+    }
     .nav-item {
       display: block;
       float: left;
       position: relative;
-      background-color: #5c79bc; // Old browsers
-      @include filter-gradient(#5c79bc, #6c9ddd, vertical); // IE6-9
-      @include background-image(linear-gradient(top,  #5c79bc 10%,#6c9ddd 10%));
+      background-color: white; // Old browsers
+      //@include filter-gradient(white, #6c9ddd, vertical); // IE6-9
+      //@include background-image(linear-gradient(top,  #5c79bc 10%,#6c9ddd 10%));
       background-position: 0 -5px;
       background-size: 100% 110%;
       transition: all 0.3s;
@@ -143,7 +140,7 @@ html {
         content: '';
         opacity: 0;
         display: block;
-        background-color: #5c79bc;
+        background-color: white;
         width: 5px;
         height: 8px;
         position: absolute;
@@ -161,14 +158,15 @@ html {
         display: block;
         padding: 15px 30px;
         text-decoration: none;
-        color: $fontcolor;
+        color: red;
         font-size: 16px;
         line-height: 20px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Stellar', sans-serif;
       }
       a:hover {
-        color: darken($fontcolor, 9%);
+        color: darken(red, 9%);
       }
+
     }
   }
 }

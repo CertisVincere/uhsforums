@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hartlforums</title>
+  <title>UHS Forums</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,8 +14,13 @@
       <li class="nav-item"><a href="#"><i class="icon-fixed-width icon-camera-retro"></i>recent</a></li>
       <li class="nav-item"><a href="#"><i class="icon-fixed-width icon-user"></i>account</a></li>
       <li class="nav-item"><a href="#"><i class="icon-fixed-width icon-envelope"></i>contact</a></li>
+      <% if logged_in? %>
+        <li class="nav-item" id="logout"><a href="#">logout</a></li>
+      <% else %>
+        <li class="nav-item" id="login"><a href="#">login</a></li>
+      <% end %>
     </ul>
-</div>
+  </div>
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
