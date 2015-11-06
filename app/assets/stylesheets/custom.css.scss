@@ -128,8 +128,6 @@ input {
       float: left;
       position: relative;
       background-color: white; // Old browsers
-      //@include filter-gradient(white, #6c9ddd, vertical); // IE6-9
-      //@include background-image(linear-gradient(top,  #5c79bc 10%,#6c9ddd 10%));
       background-position: 0 -5px;
       background-size: 100% 110%;
       transition: all 0.3s;
