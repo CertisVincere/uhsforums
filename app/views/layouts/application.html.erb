@@ -9,15 +9,15 @@
 <body>
   <div class="navbar">
     <ul class="nav">
-      <li class="nav-item"><a href="/"><i class="icon-fixed-width icon-home"></i>home</a></li>
-      <li class="nav-item"><a href="/groups"><i class="icon-fixed-width icon-coffee"></i>groups</a></li>
-      <li class="nav-item"><a href="/recent"><i class="icon-fixed-width icon-camera-retro"></i>recent</a></li>
+      <li class="nav-item"><a href="/"><i class="fa fa-home fa-fw"></i>home</a></li>
+      <li class="nav-item"><a href="/groups"><i class="fa fa-users fa-fw"></i>groups</a></li>
+      <li class="nav-item"><a href="/recent"><i class="fa fa-camera-retro fa-fw"></i>recent</a></li>
       <li class="nav-item">
         <%= link_to current_user do %>
-          <i class="icon-fixed-width icon-user"></i>account
+          <i class="fa fa-user fa-fw"></i>account
         <% end %>
       </li>
-      <li class="nav-item"><a href="/contact"><i class="icon-fixed-width icon-envelope"></i>contact</a></li>
+      <li class="nav-item"><a href="/contact"><i class="fa fa-envelope fa-fw"></i>contact</a></li>
       <% if logged_in? %>
         <li class="nav-item" id="logout"><%= link_to "logout", logout_path, method: :delete %></li>
       <% else %>
@@ -25,7 +25,7 @@
       <% end %>
       <% if !current_user.nil? && current_user.admin %>
         <li class="nav-item"><%= link_to new_user_path do %>
-          <i class="icon-fixed-width icon-plus"></i>create user
+          <i class="fa fa-plus fa-fw"></i>create user
           <% end %>
         </li>
       <% end %>
