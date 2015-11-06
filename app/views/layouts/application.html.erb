@@ -23,7 +23,7 @@
       <% else %>
         <li class="nav-item" id="login"><%= link_to "login", login_path %></a></li>
       <% end %>
-      <% if current_user.admin %>
+      <% if !current_user.nil? && current_user.admin %>
         <li class="nav-item"><%= link_to new_user_path do %>
           <i class="icon-fixed-width icon-plus"></i>create user
           <% end %>
