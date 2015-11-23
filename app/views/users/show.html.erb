@@ -1,1 +1,6 @@
-<%= @user.name %>, <%= @user.email %>
+<h1>My Account</h1>
+
+<h2>Name: <%= @user.name %></h2>
+<h2>Email: <%= @user.email %></h2>
+
+<div class='btn btn-primary create-button password-change'><%= link_to "Change password", edit_user_path, class: "password-button" %></div>

@@ -57,6 +57,14 @@ h1 {
   color: white;
 }
 
+h2 {
+  margin-left: 20px;
+  font-family: 'Stellar';
+  font-size: 1.7em;
+  text-align: left;
+  color: white;
+}
+
 .create-button, .login-button {
   font-family: 'Stellar';
   font-size: 1.3em;
@@ -104,6 +112,17 @@ input {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
+  }
+}
+
+.password-change {
+  margin-left: 20px;
+}
+
+.password-button {
+  color: white;
+  &:hover {
+    text-decoration: none;
   }
 }
 

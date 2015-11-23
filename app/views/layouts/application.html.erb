@@ -21,7 +21,7 @@
       <% if logged_in? %>
         <li class="nav-item" id="logout"><%= link_to "logout", logout_path, method: :delete %></li>
       <% else %>
-        <li class="nav-item" id="login"><%= link_to "login", login_path %></a></li>
+        <li class="nav-item" id="login"><%= link_to "login", login_path %></li>
       <% end %>
       <% if !current_user.nil? && current_user.admin %>
         <li class="nav-item"><%= link_to new_user_path do %>
