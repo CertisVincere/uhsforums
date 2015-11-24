@@ -32,6 +32,7 @@ class PasswordResetsController < ApplicationController
     else
       render 'edit'
     end
+  end
 
   private
 
