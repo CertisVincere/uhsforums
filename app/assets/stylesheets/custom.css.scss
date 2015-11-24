@@ -211,10 +211,18 @@ input {
   }
 }
 
-.user_link {
+.user_link, .delete_link {
   color: white;
   &:hover {
     color: white;
     text-decoration: none;
   }
+}
+
+.delete_link {
+  font-size: 0.8em;
+  margin-top: 0.2em;
+  font-weight: 70;
+  float: right;
+  margin-right: 1em;
 }

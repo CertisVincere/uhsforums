@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'compass-rails'
 gem 'compass'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 ruby '2.2.3'
 
