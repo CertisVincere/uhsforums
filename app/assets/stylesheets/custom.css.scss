@@ -193,6 +193,14 @@ input {
   }
 }
 
+.forgot_password {
+  font-family: "Stellar";
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
 #session_remember_me {
   width: auto;
   margin-left: 0;
