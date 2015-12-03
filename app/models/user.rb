@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  belongs_to :group
+  has_many :posts
+  
   attr_accessor :remember_token, :reset_token
 
   before_save { self.email = email.downcase }
