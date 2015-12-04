@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203215051) do
+ActiveRecord::Schema.define(version: 20151204064851) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -23,11 +23,12 @@ ActiveRecord::Schema.define(version: 20151203215051) do
   create_table "posts", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
-    t.string   "filename"
-    t.string   "content_type"
-    t.binary   "file_contents"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "topics", force: :cascade do |t|

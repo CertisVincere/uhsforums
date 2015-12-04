@@ -14,6 +14,7 @@ gem 'compass-rails'
 gem 'compass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'paperclip'
 
 ruby '2.2.3'
 
