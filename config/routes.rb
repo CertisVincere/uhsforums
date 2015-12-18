@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :groups
+  resources :groups do
+    resources :topics do
+      resources :posts
+    end
+  end
 
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

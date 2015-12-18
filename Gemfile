@@ -15,6 +15,7 @@ gem 'compass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'paperclip'
+gem 'simple_form'
 
 ruby '2.2.3'
 

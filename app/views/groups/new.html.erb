@@ -1,0 +1,9 @@
+<h1>Create a Group</h1>
+
+<%= simple_form_for @group, defaults: { input_html: { class: 'form-control' }, label_html: { class: 'label'} }, url: groups_path do |form| %>
+  <%= form.input :name %>
+  <%= form.input :category %>
+  <%= form.input :description %>
+
+  <%= form.button :submit, class: "btn btn-primary create-button" %>
+<% end %>

@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
   has_attached_file :file
-  
+
   belongs_to :user
+  belongs_to :topic
   belongs_to :group
 
   default_scope -> { order(created_at: :desc)}
