@@ -14,6 +14,11 @@ class GroupsController < ApplicationController
     end
   end
 
+  def show
+    @group = Group.find(params[:id])
+    @topics = @group.topics.paginate(page: params[:page])
+  end
+
   def index
     @groups = Group.paginate(page: params[:page])
     @user = User.find(current_user.id)
