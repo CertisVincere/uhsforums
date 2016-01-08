@@ -1,1 +1,7 @@
-<%= render 'group' %>
+<%= will_paginate @groups %>
+
+<ul class="groups">
+  <%= render @groups %>
+</ul>
+
+<%= will_paginate @groups %>

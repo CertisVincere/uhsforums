@@ -20,13 +20,24 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.paginate(page: params[:page])
-    @user = User.find(current_user.id)
+    if current_user.nil?
+      redirect_to login_url
+    else
+      @user = current_user
+      @groups = @user.groups.paginate(page: params[:page])
+    end
+  end
+
+  def destroy
+    Group.find(params[:id]).destroy
+    flash[:success] = "Group deleted"
+    redirect_to groups_url
   end
 
   private
 
   def group_params
-    params.require(:group).permit(:name, :category, :description)
+    params.require(:group).permit(:name, :category, :description, :user_id)
   end
+
 end

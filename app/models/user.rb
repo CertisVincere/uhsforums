@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
 
   has_many :posts
-  has_many :groups, :through => :posts
+  has_many :topics
+  has_many :groups
 
   attr_accessor :remember_token, :reset_token
 

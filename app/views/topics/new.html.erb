@@ -1,0 +1,7 @@
+<h1>Create a Topic for the Group <%= @group.name %><h1>
+
+<%= simple_form_for @topic, defaults: { input_html: { class: 'form-control' }, label_html: { class: 'label'} }, url: groups_path do |form| %>
+  <%= form.hidden_field :group_id, value: @group.id %>
+  <%= form.input :name %>
+  <%= form.button :submit, class: "btn btn-primary create-button" %>
+<% end %>

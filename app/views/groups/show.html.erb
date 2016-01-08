@@ -1,11 +1,12 @@
 <h1><%= @group.name %></h1>
 <h2><%= @group.category %></h2>
 <h3><%= @group.description %></h3>
+<p><%= link_to "Create a New Topic", new_group_topic_path(@group), class: "new_topic_link" %></p>
 
-<%= will_paginate @topics %>
+<%= will_paginate @topics  %>
 
 <ul class='topics'>
   <%= render @topics %>
 </ul>
 
-<%= will_paginate %>
+<%= will_paginate @topics %>
