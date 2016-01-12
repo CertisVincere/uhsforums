@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @groups = @user.groups.paginate(page: params[:page])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def new
@@ -19,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if current_user.admin
       if @user.save
-        flash[:success] = "Welcome to the UHS Forums!"
+        flash[:success] = "User successfully created."
         redirect_to @user
       else
         render 'new'

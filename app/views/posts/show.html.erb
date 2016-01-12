@@ -1,0 +1,6 @@
+<h2>Author: <%= @user.name %> (<%= time_ago_in_words(@post.created_at) %> ago)</h2>
+<p><%= @post.content %></p>
+<% if @post.attachment? %>
+  <p><%= link_to "Download attachment (#{@post.attachment_file_name})", @post.attachment.url(:original, false) %></p>
+<% end %>
+<p><%= link_to "Back to Topic View", group_topic_path(@group, @topic) %></p>

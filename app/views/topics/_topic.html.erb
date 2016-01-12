@@ -1,0 +1,6 @@
+<li>
+  <%= link_to topic.name, group_topic_path(@group.id, topic.id), class: "topic_link" %>
+  <% if current_user.admin? || current_user.moderator? && !current_user?(user) %>
+   <%= link_to "Delete topic", group_topic_path(@group.id, topic.id), class: "delete_link", method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+</li>

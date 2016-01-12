@@ -1,0 +1,11 @@
+<h1><%= @group.name %> <%= @topic.name %></h1>
+
+<h2>Posts</h2>
+<h3><%= link_to "Make a New Post", new_group_topic_post_path(@group, @topic) %></h3>
+<%= will_paginate @posts %>
+
+<ul class='posts'>
+  <%= render @posts %>
+</ul>
+
+<%= will_paginate @posts %>
