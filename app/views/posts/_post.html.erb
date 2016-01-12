@@ -1,0 +1,7 @@
+<li>
+  <%= link_to post.name, group_topic_post_path(@group, @topic, post), class: "post_link" %>
+  <% if current_user.admin? || current_user.moderator? %>
+   <%= link_to "Delete post", group_topic_post_path(@group, @topic, post), class: "delete_link", method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+</li>
+<p><%= post.content %></p>
