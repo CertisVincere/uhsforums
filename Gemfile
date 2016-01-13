@@ -16,6 +16,9 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'paperclip'
 gem 'simple_form'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'active_model_serializers'
 
 ruby '2.2.3'
 

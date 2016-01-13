@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api, defaults: {format: 'json'} do
+    resources :groups, only: [:search]
+  end
+
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
