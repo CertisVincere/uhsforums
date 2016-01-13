@@ -29,6 +29,9 @@ class GroupsController < ApplicationController
     end
   end
 
+  def search
+  end
+
   def destroy
     Group.find(params[:id]).destroy
     flash[:success] = "Group deleted"

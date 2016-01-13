@@ -1,3 +1,5 @@
+<h1>My Groups</h1>
+
 <%= will_paginate @groups %>
 
 <ul class="groups">
@@ -5,3 +7,9 @@
 </ul>
 
 <%= will_paginate @groups %>
+
+<% if @groups.empty? %>
+  <h2>You have no groups. <%= link_to "Find some groups to get started!", search_groups_path %></h2>
+<% else %>
+  <h2><%= link_to "Find more groups", search_groups_path %></h2>
+<% end %>

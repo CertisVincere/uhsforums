@@ -1,6 +1,6 @@
 <li>
   <%= link_to group.name, group, class: "group_link" %>
-  <% if current_user.admin? || current_user.moderator? && !current_user?(user) %>
+  <% if current_user.admin? || current_user.moderator? %>
    <%= link_to "Delete group", group, class: "delete_link", method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 </li>

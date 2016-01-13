@@ -21,7 +21,7 @@ class TopicsController < ApplicationController
   def show
     @group = Group.find(params[:group_id])
     @topic = Topic.find(params[:id])
-    @posts = @topic.posts.paginate(page: params[:page])
+    @posts = @topic.posts.paginate(page: params[:page]).order('created_at DESC')
   end
 
   def index
