@@ -16,6 +16,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'paperclip'
 gem 'simple_form'
+gem 'listjs-rails'
 
 ruby '2.2.3'
 
