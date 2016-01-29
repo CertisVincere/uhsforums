@@ -1,6 +1,5 @@
 class GroupsController < ApplicationController
   before_action :logged_in_user
-  respond_to :json
 
   def new
     @group = Group.new
@@ -26,13 +25,12 @@ class GroupsController < ApplicationController
       redirect_to login_url
     else
       @user = current_user
-      @groups = @user.groups.paginate(page: params[:page])
+      @user_groups = @user.groups.paginate(page: params[:page])
     end
-  end
-
-  def search
-    @group_search = GroupSearch.search(params)
-    respond_with @group_search, serializer: GroupsSerializer
+    @search = Group.search do
+      keywords params[:query]
+    end
+    @searched_groups = @search.results
   end
 
   def destroy

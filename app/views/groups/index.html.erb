@@ -1,15 +1,25 @@
 <h1>My Groups</h1>
 
-<%= will_paginate @groups %>
+<%= will_paginate @user_groups %>
 
 <ul class="groups">
-  <%= render @groups %>
+  <%= render @user_groups %>
 </ul>
 
-<%= will_paginate @groups %>
+<%= will_paginate @user_groups %>
 
-<% if @groups.empty? %>
-  <h2>You have no groups. <%= link_to "Find some groups to get started!", search_groups_path %></h2>
+<% if @user_groups.empty? %>
+  <h2>You have no groups. Find some groups to get started!</h2>
 <% else %>
-  <h2><%= link_to "Find more groups", search_groups_path %></h2>
+  <h2>Find some more groups</h2>
 <% end %>
+
+<%= form_tag groups_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+<h2>Search results</h2>
+<%= render @searched_groups %>
