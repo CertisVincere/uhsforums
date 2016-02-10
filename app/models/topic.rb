@@ -1,4 +1,8 @@
 class Topic < ActiveRecord::Base
+
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   belongs_to :group
   belongs_to :user
   has_many :posts, :dependent => :destroy

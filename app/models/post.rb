@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
   has_attached_file :attachment
 
   validates_attachment_file_name :attachment, matches: [/docx\Z/, /doc\Z/, /pdf\Z/, /jpg\Z/, /png\Z/]
@@ -11,6 +14,5 @@ class Post < ActiveRecord::Base
   validates :name, presence: true
   validates :content, presence: true
   validates_with AttachmentSizeValidator, attributes: :attachment, less_than: 3.megabytes
-
 
 end
