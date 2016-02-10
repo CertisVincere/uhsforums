@@ -1,6 +1,6 @@
-<li>
-  <%= link_to topic.name, group_topic_path(@group.id, topic.id), class: "topic_link" %>
-  <% if current_user.admin? || current_user.moderator? && !current_user?(user) %>
-   <%= link_to "Delete topic", group_topic_path(@group.id, topic.id), class: "delete_link", method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
-</li>
+<div class="topic_div">
+  <ul style='list-style-type: none'>
+  <%= link_to topic.name, group_topic_path(@group.id, topic.id), id: "topic_button" %>
+   <%= link_to raw("<span class='close hairline'>"), group_topic_path(@group.id, topic.id), method: :delete, data: { confirm: "Are you sure you want to delete this topic? All posts within this topic will also be deleted." } %>
+  </ul>
+</div>

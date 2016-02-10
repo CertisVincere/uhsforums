@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'active_model_serializers'
+gem 'listjs-rails'
 
 ruby '2.2.3'
 

@@ -228,9 +228,75 @@ input {
 }
 
 .delete_link {
+  color: darkred;
   font-size: 0.8em;
   margin-top: 0.2em;
   font-weight: 70;
   float: right;
   margin-right: 1em;
+}
+
+.group_div, .topic_div {
+  background-color: white;
+  border-radius: 2.5px;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 50px;
+  height: 50px;
+}
+
+#group_button, #topic_button {
+  font: "Stellar";
+  text-decoration: none;
+  background-color: white;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  border-left: 1px solid red;
+  color: red;
+  line-height: 50px;
+  transition: all 0.4s ease 0s;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.close {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  &:hover {
+    &::before, &::after {
+      background: darkred;
+    }
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+  }
+  &::before {
+    @include transform(rotate(45deg));
+  }
+  &::after {
+    @include transform(rotate(-45deg));
+  }
+  &.hairline {
+    &::before, &::after {
+      height: 1.5px;
+    }
+  }
+}
+
+#topic_header {
+  text-align: center;
 }

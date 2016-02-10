@@ -96,6 +96,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    listjs-rails (1.1.1)
+      railties (>= 3.1.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -218,6 +220,7 @@ DEPENDENCIES
   compass-rails
   jbuilder (~> 2.0)
   jquery-rails
+  listjs-rails
   paperclip
   pg
   puma

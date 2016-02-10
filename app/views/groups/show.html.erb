@@ -1,12 +1,18 @@
+
 <h1><%= @group.name %></h1>
 <h2><%= @group.category %></h2>
 <h3><%= @group.description %></h3>
 <p><%= link_to "Create a New Topic", new_group_topic_path(@group), class: "new_topic_link" %></p>
 
-<%= will_paginate @topics  %>
-
-<ul class='topics'>
-  <%= render @topics %>
-</ul>
-
+<h2 id='topic_header'>Topics</h2>
+<button class="sort" data-sort="name">
+  Sort by name
+</button>
+<button class="sort" data-sort="created_at">
+  Sort by most recent
+</button>
+<%= will_paginate @topics %>
+  <ul class='topic-list'>
+    <%= render @topics %>
+  </ul>
 <%= will_paginate @topics %>

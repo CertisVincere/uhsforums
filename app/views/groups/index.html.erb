@@ -11,15 +11,16 @@
 <% if @user_groups.empty? %>
   <h2>You have no groups. Find some groups to get started!</h2>
 <% else %>
+<br>
   <h2>Find some more groups</h2>
 <% end %>
 
-<%= form_tag groups_path, :method => :get do %>
+<%= form_tag groups_path, method: :get do %>
   <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", name: nil %>
+    <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'search...' %>
+    <%= submit_tag "Search", class: 'btn btn-default' %>
   </p>
 <% end %>
 
-<h2>Search results</h2>
+<h2>Groups</h2>
 <%= render @searched_groups %>
